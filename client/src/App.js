@@ -30,19 +30,19 @@ const App = () => {
           alt="memories"
           height="60"
         />
-        <Grow in>
-          <Container>
-            <Grid container justify="space-between" alignItems="">
-              <Grid item xs={12} sm={7}>
-                <Posts />
-              </Grid>
-              <Grid item xs={12} sm={4}>
-                <Form />
-              </Grid>
-            </Grid>
-          </Container>
-        </Grow>
       </AppBar>
+      <Grow in>
+        <Container>
+          <Grid container justify="space-between" alignItems="">
+            <Grid item xs={12} sm={7}>
+              <Posts />
+            </Grid>
+            <Grid item xs={12} sm={4}>
+              <Form />
+            </Grid>
+          </Grid>
+        </Container>
+      </Grow>
     </Container>
   );
 };
