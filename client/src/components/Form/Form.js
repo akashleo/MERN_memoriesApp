@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import useStyles from "./styles";
 import FileBase from "react-file-base64";
 import { useDispatch } from "react-redux";
-import createPost from "../../actions/posts";
+import { createPost } from "../../actions/posts";
 
 import { TextField, Button, Typography, Paper } from "@material-ui/core";
 
@@ -26,7 +26,7 @@ const Form = () => {
   return (
     <Paper className={classes.paper}>
       <form
-        autocomplete="off"
+        autoComplete="off"
         noValidate
         className={`${classes.root} ${classes.form}`}
         onSubmit={handleSubmit}

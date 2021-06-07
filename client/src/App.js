@@ -33,7 +33,7 @@ const App = () => {
       </AppBar>
       <Grow in>
         <Container>
-          <Grid container justify="space-between" alignItems="">
+          <Grid container justify="space-between" alignItems="stretch">
             <Grid item xs={12} sm={7}>
               <Posts />
             </Grid>
