@@ -6,7 +6,9 @@ import { createPost } from "../../actions/posts";
 
 import { TextField, Button, Typography, Paper } from "@material-ui/core";
 
-const Form = () => {
+// Get the current id
+
+const Form = ({ cuurentId, setCurrentId }) => {
   const classes = useStyles();
   const dispatch = useDispatch();
 
@@ -21,7 +23,8 @@ const Form = () => {
   const clear = () => {};
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(createPost(postData));
+
+    if (curre) dispatch(createPost(postData));
   };
   return (
     <Paper className={classes.paper}>
