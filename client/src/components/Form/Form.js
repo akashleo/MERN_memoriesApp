@@ -2,13 +2,13 @@ import React, { useState } from "react";
 import useStyles from "./styles";
 import FileBase from "react-file-base64";
 import { useDispatch } from "react-redux";
-import { createPost } from "../../actions/posts";
+import { createPost, updatePost } from "../../actions/posts";
 
 import { TextField, Button, Typography, Paper } from "@material-ui/core";
 
 // Get the current id
 
-const Form = ({ cuurentId, setCurrentId }) => {
+const Form = ({ currentId, setCurrentId }) => {
   const classes = useStyles();
   const dispatch = useDispatch();
 
@@ -24,7 +24,11 @@ const Form = ({ cuurentId, setCurrentId }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (curre) dispatch(createPost(postData));
+    if (currentId) {
+      dispatch(updatePost(currentId, postData));
+    } else {
+      dispatch(createPost(postData));
+    }
   };
   return (
     <Paper className={classes.paper}>
