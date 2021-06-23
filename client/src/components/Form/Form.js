@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import useStyles from "./styles";
 import FileBase from "react-file-base64";
-import { useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+
 import { createPost, updatePost } from "../../actions/posts";
 
 import { TextField, Button, Typography, Paper } from "@material-ui/core";
@@ -9,8 +10,16 @@ import { TextField, Button, Typography, Paper } from "@material-ui/core";
 // Get the current id
 
 const Form = ({ currentId, setCurrentId }) => {
+  const post = useSelector((state) =>
+    currentId ? state.posts.find((p) => p.id === currentId) : null
+  );
+
   const classes = useStyles();
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (post) setPostData(post);
+  }, [post]);
 
   const [postData, setPostData] = useState({
     creator: "",
