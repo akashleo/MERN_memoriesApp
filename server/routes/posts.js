@@ -10,7 +10,7 @@ import {
 const router = express.Router();
 
 router.get("/", getPosts);
-router.get("/", createPost);
+router.post("/", createPost);
 router.patch("/:id", updatePost);
 router.delete("/:id", deletePost);
 router.patch("/:id/likePost", likePost);
