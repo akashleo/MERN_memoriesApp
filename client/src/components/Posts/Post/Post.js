@@ -20,6 +20,9 @@ const Post = ({ post, setCurrentId }) => {
   const classes = useStyles();
   const dispatch = useDispatch();
 
+  //const date = new Date()
+  console.log(post);
+
   return (
     <Card className={classes.card}>
       <CardMedia
@@ -30,7 +33,7 @@ const Post = ({ post, setCurrentId }) => {
       <div className={classes.overlay}>
         <Typography variant="h6">{post.creator}</Typography>
         <Typography variant="body2">
-          {moment(post.creator).fromNow()}
+          {moment(post.createdAt).fromNow()}
         </Typography>
       </div>
       <div className={classes.overlay}>
