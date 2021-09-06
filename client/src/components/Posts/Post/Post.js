@@ -36,7 +36,7 @@ const Post = ({ post, setCurrentId }) => {
           {moment(post.createdAt).fromNow()}
         </Typography>
       </div>
-      <div className={classes.overlay}>
+      <div className={classes.overlay2}>
         <Button
           style={{ color: "white" }}
           size="small"
